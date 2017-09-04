@@ -7,3 +7,5 @@
 /.purs*
 /.psa*
 .purs-repl
+yarn-error.log
+yarn.lock

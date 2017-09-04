@@ -1,7 +1,7 @@
 require('isomorphic-fetch');
 
 exports.fetchImpl = function(options) {
-  console.log("options", options);
+  // console.log("options", options);
   return function () {
     return fetch(options.uri, options)
   };

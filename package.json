@@ -1,6 +1,28 @@
 {
+  "name": "purescript-isomorphic-fetch",
+  "version": "0.1.0",
+  "description": "PureScript bindings for isomorphic-fetch",
+  "repository": {
+     "type": "git",
+     "url": "git+https://github.com/sectore/purescript-isomorphic-fetch.git"
+  },
+  "author": "Jens Krause",
+  "license": "MIT",
+  "bugs": {
+   "url": "https://github.com/sectore/purescript-isomorphic-fetch/issues"
+  },
+  "homepage": "https://github.com/sectore/purescript-isomorphic-fetch#readme",
+  "scripts": {
+    "clean": "rimraf output && rimraf .pulp-cache $$ rimraf .psci_modules",
+    "postinstall": "bower cache clean && bower install",
+    "build": "pulp build",
+    "test": "pulp test"
+  },
   "dependencies": {
     "es6-promise": "^4.1.1",
     "isomorphic-fetch": "^2.2.1"
+  },
+  "devDependencies": {
+    "rimraf": "^2.6.1"
   }
 }
