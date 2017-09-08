@@ -20,14 +20,14 @@
   ],
   "dependencies": {
     "purescript-aff-promise": "^0.7.0",
-    "purescript-http-types": "https://github.com/sectore/purescript-http-types.git#fix/update-dependencies"
+    "purescript-foreign-generic": "^5.0.0",
+    "purescript-http-types": "https://github.com/sectore/purescript-http-types.git#fix/optional-body"
   },
   "devDependencies": {
     "purescript-prelude": "^3.1.0",
     "purescript-console": "^3.0.0",
     "purescript-psci-support": "^3.0.0",
     "purescript-debug": "^3.0.0",
-    "purescript-foreign-generic": "^5.0.0",
     "purescript-test-unit": "^12.0.0"
   }
 }

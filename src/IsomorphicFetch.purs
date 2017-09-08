@@ -19,7 +19,9 @@ import Prelude
 import Control.Monad.Aff (Aff)
 import Control.Monad.Eff (Eff, kind Effect)
 import Control.Promise (toAffE, Promise)
-import Data.Foreign (Foreign)
+import Data.Foreign (Foreign, toForeign)
+import Data.Foreign.NullOrUndefined (undefined)
+import Data.Maybe (maybe)
 import Data.URI.URI (print) as URI
 import Network.HTTP.Types.Exchange (Request(..), Response, delete, get, patch
   , patchWithBody, post, postWithBody, put, putWithBody) as HTTP
@@ -39,14 +41,14 @@ type FetchEff eff =
 newtype FetchRequest = FetchRequest
   { uri :: String
   , method :: String
-  , body :: String
+  , body :: Foreign -- String or undefined
   }
 
 toFetchRequest :: HTTP.Request -> FetchRequest
 toFetchRequest (HTTP.Request r) =
   FetchRequest { uri: URI.print r.uri
                 , method: show r.method
-                , body: r.body
+                , body: maybe undefined toForeign r.body
                 }
 
 foreign import fetchImpl :: forall eff. FetchRequest -> Eff (FetchEff eff) (Promise HTTP.Response)
