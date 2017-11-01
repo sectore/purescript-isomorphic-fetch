@@ -23,6 +23,6 @@
     "isomorphic-fetch": "^2.2.1"
   },
   "devDependencies": {
-    "rimraf": "^2.6.1"
+    "rimraf": "^2.6.2"
   }
 }
